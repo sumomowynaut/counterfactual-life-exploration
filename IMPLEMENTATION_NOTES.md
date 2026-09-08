@@ -160,3 +160,40 @@ SKILL.md 使用 YAML frontmatter 符合 Agent Skills 标准；references 按需�
 统一名称：**因果现实性检查**（不再使用"收敛检查"作为与"现实性检查"并列的术语）。
 
 语义：检查因果是否成立、是否存在现实约束冲突、是否依赖未经支持的巧合、是否需要未经支持的人格变化、是否依赖未建立的重大外部事件。**不检查"结果是否偏离一般人群分布"。**
+
+---
+
+# v0.2 Iteration Log
+
+> v0.2 小范围、低风险迭代。保留 v0.1 全部已验证核心，新增 8 项边界与可移植性改进。
+
+## Files Changed
+
+| 文件 | 变更 |
+| --- | --- |
+| SKILL.md | §2.4 用户报告事实与内部一致性检查；§7 Insight 新定义（非心理分析）；§8 三种结束 + Session Summary；§6 Other Self Knowledge Boundary 允许/禁止清单 + Role Induction Resistance；§4.1 Third Life / Secondary Branch 规则；§9 安全分级与不强制意义重构 |
+| references/uncertainty.md | 新增 §2 Reported Fact 与内部一致性检查（轻量机制，不改变 taxonomy）；冲突确认话术；禁用语增加心理归因与"你记错了" |
+| references/philosophy.md | 重写：Insight 非心理分析定义、Observation/Tension/User-owned Meaning 三段结构、心理归因禁止清单、诚实兜底（替代旧的模糊"只能给常识"说法） |
+| references/safety.md | 重写：风险三档分级（正常遗憾/重大失去/急性风险，非关键词熔断）、安全模式操作、不强制意义重构、§6.2 用户主动中断 |
+| references/workflow.md | Phase 04 增加 Secondary Branch 规则；Phase 08 明确 Other Self 允许/禁止使用清单；Phase 10 Insight 三段结构；Phase 11 三种结束（A/B/C）+ Session Summary；Phase 01/02 引用 Reported Fact |
+| tests/test-13-decision-pressure.md | 新增：决策压力对抗测试（6 场景：直接判断/取消不确定性/强迫二选一/幸福度/强压/切换现实建议） |
+| examples/family-expectations.md | 新增：东亚家庭期望分叉案例（父母期望、家庭关系、城市、职业、经济安全、自主性），非刻板概括 |
+| STANDALONE_PROMPT.md | 新增：无 Skills 环境兼容 Prompt；顶部声明 canonical 为 SKILL.md，避免双 Prompt 漂移 |
+| README.md | 新增 Model Capability 章节；安装体验优化（npx skills add 一键 + clone + standalone）；新示例与结构引用 |
+| IMPLEMENTATION_NOTES.md | 本记录 |
+
+## Core Regression（v0.1 已验证项）
+
+- 11 Phase：保留（Phase 01–11 完整，见 SKILL.md §3）
+- Single-variable：保留（SKILL.md §4，含"用户要求一起模拟"拒绝）
+- Causal Propagation + 因果现实性检查：保留（SKILL.md §4/§3.1，references/causality.md 未改）
+- Fake precision / life score / happiness score：禁止清单保留且扩充
+- User counterfactual expectation ≠ FACT：保留（§2.5）
+- Other Self 知识边界：保留并增强
+- Reflection 用户拥有意义：保留
+- Insight 禁心理归因：增强为显式三段结构
+- Return to Now：保留（作为 Natural Completion 闭环；B/C 两种结束不再强制）
+
+## 未做（遵守约束）
+
+- 未改 11 Phase、未改因果传播核心模型、未引入 Mermaid 强制、未做 Web UI/数据库/API、未改 LICENSE、未删 audit/phase4/phase5 材料、未改历史测试结论。
