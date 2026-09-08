@@ -1,5 +1,8 @@
 # Counterfactual Life Exploration
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Skill](https://img.shields.io/badge/Skill-AI%20Skill-blue)](https://github.com/sumomowynaut/counterfactual-life-exploration)
+
 **中文名：假如可以重来** · **反事实人生探索**
 **Slogan：Explore the lives that never happened. / 探索那些从未发生的人生。**
 
@@ -207,3 +210,5 @@ phase5/           # 发布就绪审计
 ## License
 
 MIT
+
+
