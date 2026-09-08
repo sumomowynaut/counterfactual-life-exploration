@@ -125,8 +125,7 @@ phase5/           # Publication readiness audit
 
 ## License
 
-MIT
-
+[MIT](LICENSE)
 ---
 
 # 中文说明
@@ -209,6 +208,8 @@ phase5/           # 发布就绪审计
 
 ## License
 
-MIT
+[MIT](LICENSE)
+
+
 
 
