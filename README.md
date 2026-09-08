@@ -42,27 +42,34 @@ Every choice makes one version of you real — and makes countless others disapp
 
 ## How to use
 
-CLE works in any agent that can load a Markdown-based skill (Claude Code, Codex, Cursor, and other AI agents). Two ways to get it:
+CLE works in any agent that can load a Markdown-based skill (Claude Code, Codex, Cursor, and other AI agents).
 
-### Option 1 — Clone and point to SKILL.md (works today)
+### Option 1 — Manual install (universal)
 
-```bash
-git clone <this-repo-url>
+Copy the whole `counterfactual-life-exploration` folder into your tool's skills directory. Because `SKILL.md` lives at the **repo root**, copy the entire repo folder so its `references/` (and `examples/`, `tests/`) stay alongside `SKILL.md`:
+
+- **Codex**: `~/.codex/skills/counterfactual-life-exploration/`
+- **Claude**: `~/.claude/skills/counterfactual-life-exploration/`
+- Other skill-capable AI: its own skills directory
+
+```text
+~/.codex/skills/
+└── counterfactual-life-exploration/
+    ├── SKILL.md
+    ├── references/   # workflow / causality / uncertainty / reflection / philosophy / safety
+    ├── examples/     # career / relationship / education / relocation
+    └── tests/        # behavioral test checklist
 ```
 
-Then tell your agent to load `SKILL.md` from the cloned directory. Its `references/` files sit alongside `SKILL.md` and are loaded on demand by the agent; keep them in the same directory.
+### Option 2 — Ask your AI to install it (recommended)
 
-### Option 2 — `npx skills` (after publishing)
+Send this message to your AI assistant (Codex / Claude / any skill-capable tool):
 
-Once published, install via the [open agent skills tool](https://github.com/vercel-labs/skills):
+> Please install the counterfactual-life-exploration skill from this GitHub repo:
+> https://github.com/sumomowynaut/counterfactual-life-exploration
+> The skill lives at the repository root (where SKILL.md is); install it into my skills directory.
 
-```bash
-npx skills add <owner>/<repo>
-```
-
-The root-level `SKILL.md` is discovered automatically, and `references/`, `examples/`, and `tests/` install alongside it.
-
-### Directly in any chat
+### Option 3 — Directly in any chat
 
 Paste the contents of `SKILL.md` into your system prompt, then talk to the AI. This gives the core workflow; loading `references/` as well gives the full causal and epistemic rules.
 
@@ -135,16 +142,42 @@ MIT
 - **另一个自己（The Other Self）**：只知道自己这条人生里被推演建立过的信息。没推演过的事，它会老实说"我不知道"，不会编造。
 - **回到现在（Return to Now）**：探索结束时会问：看完另一种人生之后，现在的你还想改变什么？过去的无法重来，但未来仍然没有被选择。
 
-## 怎么使用
+## 安装
 
-CLE 可以运行在任何能加载 Markdown-based Skill 的 AI Agent 中（Claude Code、Codex、Cursor 等）。
+### 方式 1：手动安装（通用）
 
-1. **获取**：克隆本仓库，让 Agent 加载根目录的 `SKILL.md`；或把 `SKILL.md` 内容粘贴进对话。
-2. **开始**：用你自己的话讲一个你想重来的人生节点即可，例如：
-   > "我大学毕业的时候有两个 offer，一个在上海，一个在老家，最后我回去了。现在有时候会想，如果当时去了上海……"
-3. **过程**：Agent 会先听你讲、确认关键事实，再锁定你想重走的那一个节点，逐层推演，最后带你回到现在。它不是问卷，不会一次问你十个问题。
+把整个 `counterfactual-life-exploration` 文件夹（本仓库根目录，SKILL.md 就在里面）复制到对应工具的技能目录：
 
-详细规则见 `references/`（workflow / causality / uncertainty / reflection / philosophy / safety）。完整示例见 `examples/`。
+- **Codex**：`~/.codex/skills/counterfactual-life-exploration/`
+- **Claude**：`~/.claude/skills/counterfactual-life-exploration/`
+- 其他支持 Skill 的 AI：放到它自己的 skills 目录
+
+注意：`SKILL.md` 在仓库根目录，且依赖同级的 `references/`（按相对路径加载规则），所以请复制整个仓库文件夹，不要只拷单个文件。
+
+```text
+~/.codex/skills/
+└── counterfactual-life-exploration/
+    ├── SKILL.md
+    ├── references/   # workflow / causality / uncertainty / reflection / philosophy / safety
+    ├── examples/     # career / relationship / education / relocation
+    └── tests/        # 行为测试清单
+```
+
+### 方式 2：把链接丢给 AI 一键安装（推荐）
+
+把下面这句话原样发给你的 AI 助手（Codex / Claude / 其他支持 Skill 的工具）：
+
+> 请安装这个 GitHub 仓库里的 counterfactual-life-exploration 技能：
+> https://github.com/sumomowynaut/counterfactual-life-exploration
+> 技能在仓库根目录（SKILL.md 所在目录），安装到我的技能目录。
+
+Codex 会调用 skill-installer 自动下载并安装；其他 AI 也会据此把 `counterfactual-life-exploration/` 放进对应的 skills 目录。装好后直接说"如果当初……""要是我当时……""假如那时没有……"，即可触发。
+
+## 使用
+
+直接说"如果当初……""要是那时……""假如当初没有……"等内容即可自动触发；也可以显式调用 `$counterfactual-life-exploration`。
+
+探索过程不是问卷：AI 会先听你讲、确认关键事实，再锁定你想重走的那一个节点，逐层因果推演，最后带你回到现在。详细规则见 `references/`（workflow / causality / uncertainty / reflection / philosophy / safety）。完整示例见 `examples/`。
 
 ## 适用场景
 
